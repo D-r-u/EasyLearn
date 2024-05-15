@@ -1,0 +1,44 @@
+{% extends "admin/adm_home_index.html" %}
+{% block body %}
+<body>
+<h1 class="title-big text-center">Approved Staff</h1>
+<form action="/myapp/view_apprve_rjct_staff_post/" method="post"><table class="pull-left" style="color:  var(--font-color);">
+  {% csrf_token %}
+    <tr>
+    <td width="148"><input type="text" class="form-control" name="srch" id="srch" /></td>
+    <td width="36"><input type="submit" class="btn btn-info" name="search" id="search" value="Search" /></td>
+  </tr>
+</table>
+<br><br>
+<table class="table table-bordered" style="color:  var(--font-color);">
+  <tr>
+    <th width="24">Sl No.</th>
+    <th width="37">Name</th>
+    <th width="45">Gender</th>
+    <th width="29">DoB</th>
+    <th width="54">Contacts</th>
+    <th width="51">Address</th>
+    <th width="75">Qualification</th>
+    <th width="34">Proof</th>
+    <th width="65">Current Institution</th>
+    <th width="65">Status</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td height="49">&nbsp;{{ forloop.counter }}</td>
+    <td><img src="{{ i.photo }}" alt="" name="img" width="32" height="32" id="img" /><br>
+    &nbsp;{{ i.name }}</td>
+    <td>&nbsp;{{ i.gender}}</td>
+    <td> {{ i.dob }}</td>
+    <td>&nbsp;{{ i.phone }}<br>{{i.mail }}</td>
+    <td>&nbsp;{{ i.housename }},{{ i.place}},{{ i.district }},{{ i.state }}-{{ i.pincode }}</td>
+    <td>{{ i.qualification }}&nbsp;</td>
+    <td><img src="{{ i.proof }}" width="32" height="32"></td>
+      <td>&nbsp;{{ i.current_institution }}</td>
+      <td>&nbsp;{{ i.status }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

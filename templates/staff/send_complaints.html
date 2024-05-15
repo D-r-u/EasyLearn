@@ -1,0 +1,19 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+    <h1>Send Complaint</h1>
+<form action="/myapp/stf_send_complaints_post/" method="post">
+    <table width="336" border="1" class="table table-bordered" style="color:  var(--font-color);">
+    {% csrf_token %}
+  <tr>
+    <th colspan="2">Complaint:
+      <label for="textarea"></label></th>
+  </tr>
+  <tr>
+    <td colspan="2"><textarea name="textarea" id="textarea" cols="60" rows="5" class="form-control" ></textarea></td>
+  </tr>
+  <tr>
+    <td width="226">&nbsp;</td>
+    <td width="104"><input type="submit" name="button" id="button" value="Submit" class="btn btn-outline-primary" style="color:  var(--font-color);" /></td>
+  </tr>
+</table></form>
+    {% endblock %}

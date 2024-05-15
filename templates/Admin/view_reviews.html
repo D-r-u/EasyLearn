@@ -1,0 +1,40 @@
+{% extends "admin/adm_home_index.html" %}
+{% block body %}
+
+<body>
+<h1 class="title-big text-center">Reviews</h1>
+<form action="/myapp/view_reviews_post/" method="post"><table class="pull-left" style="color:  var(--font-color);">
+    {% csrf_token %}
+  <tr>
+    <td>From:</td>
+    <td><input type="date" class="form-control" name="from" id="from" /></td>
+    <td>To:</td>
+    <td><input type="date" class="form-control" name="to" id="to" /></td>
+    <td><input type="submit" class="btn btn-info" name="go" id="go" value="Search" /></td>
+  </tr>
+</table>
+<br><br>
+  <table class="table table-bordered" style="color:  var(--font-color);">
+    <tr>
+      <th width="46">Sl No.</th>
+      <th width="56">Date</th>
+      <th width="59">Name</th>
+      <th width="59">Category</th>
+      <th width="100">Review</th>
+      <th width="75">Rating</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>&nbsp;{{ i.LOGIN.username }}</td>
+      <td>&nbsp;{{ i.type }}</td>
+      <td>{{ i.review }}</td>
+      <td>&nbsp;{{ i.rating }}/5</td>
+    </tr>
+      {% endfor %}
+  </table>
+
+</form>
+</body>
+{% endblock %}

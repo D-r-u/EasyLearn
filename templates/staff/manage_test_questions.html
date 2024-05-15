@@ -1,0 +1,60 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapp/stf_manage_test_questions_post/" >
+    <h1 class="title-big">Test Questions</h1>
+    <br>
+{% csrf_token %}
+  <table width="250" border="1" class="pull-left" style="color:  var(--font-color);">
+    <tr>
+      <td>Test</td>
+      <td>
+        <select name="tests" id="tests" class="form-control">
+             {% for i in data %}
+          <option value="{{ i.testname }}">{{ i.testname }}</option>
+          {% endfor%}
+      </select></td>
+      <td><input type="submit" name="Go" id="Go" value="Go!" class="btn btn-info" style="color:  var(--font-color);" /></td>
+    </tr>
+  </table>
+    <table width="200" border="1" class="table table-bordered" style="color:  var(--font-color);">
+    <tr>
+      <th>Sl No</th>
+      <th>Question</th>
+      <th>Option 1</th>
+      <th>Option 2</th>
+      <th>Option 3</th>
+      <th>Option 4</th>
+      <th>Correct answer</th>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+        {% for j in quest %}
+    <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ j.question }}</td>
+            <td>{{ j.option1 }}</td>
+            <td>{{ j.option2}}</td>
+            <td>{{ j.option3 }}</td>
+            <td>{{ j.option4 }}</td>
+            <td>{{ j.correct_answer }}</td>
+            <td><a href="/myapp/stf_edit_questions/{{ j.id }}" class="btn btn-outline-info" style="color:  var(--font-color);">Edit</a></td>
+            <td>
+                <a href="/myapp/stf_delete_questions/{{ j.id }}" class="btn btn-outline-danger" style="color:  var(--font-color);">Delete</a>
+{#                <input type="submit" name="ediy2" id="ediy2" value="Delete" class=""  style="color:  var(--font-color);"/>#}
+            </td>
+    </tr>
+        {% endfor %}
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+        <td><a href="/myapp/stf_add_questions/" class="btn btn-outline-primary"/>ADD+</a>
+    </tr>
+  </table>
+</form>
+    {% endblock %}

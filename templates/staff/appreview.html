@@ -1,0 +1,80 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .rate {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
+
+        .rate:not(:checked) > input {
+            position: absolute;
+            top: -9999px;
+        }
+
+        .rate:not(:checked) > label {
+            float: right;
+            width: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
+        }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+        .rate > input:checked ~ label {
+            color: #ffc700;
+        }
+
+        .rate:not(:checked) > label:hover,
+        .rate:not(:checked) > label:hover ~ label {
+            color: #deb217;
+        }
+
+        .rate > input:checked + label:hover,
+        .rate > input:checked + label:hover ~ label,
+        .rate > input:checked ~ label:hover,
+        .rate > input:checked ~ label:hover ~ label,
+        .rate > label:hover ~ input:checked ~ label {
+            color: #c59b08;
+        }
+    </style>
+    <title>Star Rating</title>
+</head>
+<body >
+<h1 align="center">Review</h1>
+<form id="ratingForm" method="post" action="/myapp/stf_appreview_post/" align="center" >
+    {% csrf_token %}
+    <table width="150" border="1" class="table table-bordered" style="color:  var(--font-color);">
+
+   <tr><td><div class="rate">
+        <input type="radio" name="rating" id="star5" value="5">
+        <label for="star5"></label>
+        <input type="radio" name="rating" id="star4" value="4">
+        <label for="star4"></label>
+        <input type="radio" name="rating" id="star3" value="3">
+        <label for="star3"></label>
+        <input type="radio" name="rating" id="star2" value="2">
+        <label for="star2"></label>
+        <input type="radio" name="rating" id="star1" value="1">
+        <label for="star1"></label>
+   </div></td><td>
+    <textarea name="review" rows="5" cols="100" class="form-control">
+    </textarea></td></tr>
+        <tr><td></td><td align="right"><button type="submit" class="btn btn-info">Submit Rating</button></td></tr>
+    </table>
+</form>
+</body>
+{% endblock %}

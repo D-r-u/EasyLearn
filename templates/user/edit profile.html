@@ -1,0 +1,60 @@
+{% extends 'user/usr_home_index.html' %}
+{% block body %}
+    <h1>Edit Profile</h1>
+
+<form action="/myapp/usr_edit_profile_post/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<table width="554" border="1" class="table table-bordered" style="color:  var(--font-color);">
+  <tr>
+    <td width="159" rowspan="3"><p>
+      <img src="{{ user.photo }}" height="80px" width="80px" class="img-circle"><br>
+      <input type="file" name="imageField" id="imageField">
+    <p>edit profile picture </p></td>
+    <td width="166">Name</td>
+    <td width="207"><label for="textfield"></label>
+    <input type="text" class="form-control" name="textfield" id="textfield" value="{{ user.name }}"/></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><input name="gender" type="radio" value="Male" {% if user.gender == "male" %}checked{% endif %} />Male<br>
+     <input name="gender" type="radio" value="Female" {% if user.gender == "female" %}checked{% endif %} />Female<br>
+     <input name="gender" type="radio" value="Other" {% if user.gender == "other" %}checked{% endif %}/>Other</td>
+  </tr>
+  <tr>
+    <td>DOB</td>
+    <td><label for="textfield1"></label>
+     <input type="date" class="form-control" value ="{{ user.dob|date:"Y-m-d" }}" name="textfield1" id="textfield1" /></td>
+  </tr>
+  <tr>
+    <td>Username</td>
+    <td colspan="2"><label for="textfield2"></label>
+    <input type="text" class="form-control" value="{{ user.LOGIN.username}}" name="textfield2" id="textfield2" /></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td colspan="2"><label for="textfield3"></label>
+    <input type="text" class="form-control" value ="{{ user.phone }}" name="textfield3" id="textfield3" /></td>
+  </tr>
+  <tr>
+    <td>Email id</td>
+    <td colspan="2"><label for="textfield4"></label>
+    <input type="text" class="form-control"  value ="{{ user.mail }}" name="textfield4" id="textfield4" /></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td colspan="2"><label for="textfield5"></label>
+    <input type="text" class="form-control" value ="{{ user.place }}" name="textfield5" id="textfield5" /></td>
+  </tr>
+  <tr>
+    <td>Education status </td>
+    <td colspan="2"><label for="textfield6"></label>
+    <input type="text" class="form-control" value ="{{ user.current_education_status }}" name="textfield6" id="textfield6" /></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+    <td><input type="submit" class="btn btn-outline-primary" name="button2" id="button2" value="Submit" /></td>
+  </tr>
+  
+</table>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapp/stf_view_test_results_post/{{ id }}">
+    {% csrf_token %}
+  <table width="200" border="1" class="table table-bordered" style="color:  var(--font-color);">
+    <tr>
+      <td>
+      <input type="text" class="form-control" name="search" id="search" /></td>
+      <td><input type="submit" class="btn btn-info" name="search2" id="search2" value="Search" /></td>
+    </tr>
+  </table>
+<table border="1" class="table table-bordered"  style="color:  var(--font-color);">
+    <tr>
+      <th>Sl No</th>
+      <th>Name</th>
+      <th>Mark</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.USER.name }}</td>
+      <td>&nbsp;{{ i.mark }}</td>
+      <td>&nbsp;{{ i.USER.phone }}</td>
+      <td>&nbsp;{{ i.USER.mail }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+    {% endblock %}

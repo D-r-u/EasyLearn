@@ -1,0 +1,39 @@
+{% extends 'user/usr_home_index.html' %}
+{% block body %}
+    <h1>Attend Tests</h1>
+<form action="/myapp/usr_attend_test_post/" method="post">
+{% csrf_token %}
+<br>
+<br>
+ <table width="543" border="0" class="pull-left" style="color:  var(--font-color);">
+      <td >Search Test name</td>
+      <td >
+      <input type="text" class="form-control" name="textfield2" id="textfield2" /></td>
+      <td><input type="submit" class="btn btn-info" name="button" id="button" value="go" /></td>
+    </tr>
+        </table>
+<br>
+<br>
+
+    <table width="437" border="1" class="table table-bordered" style="color:  var(--font-color);">
+  <tr>
+    <td width="64">Sl No</td>
+    <td width="78">Test Name</td>
+    <td width="59">Staff</td>
+    <td width="65">Date</td>
+    <td width="48">Time</td>
+    <td width="83">&nbsp;</td>
+  </tr>
+        {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.testname }}</td>
+    <td>{{ i.STAFF.name }}</td>
+    <td>{{ i.date }}</td>
+    <td>{{ i.time }}</td>
+    <td><a href="/myapp/usr_exam_center/{{ i.id }}" class="btn btn-outline-primary">attend</a></td>
+  </tr>
+        {% endfor %}
+</table>
+</form>
+{% endblock %}

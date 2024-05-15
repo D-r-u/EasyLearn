@@ -1,0 +1,44 @@
+{% extends 'user/usr_home_index.html' %}
+{% block body %}
+    <h1>Replies</h1>
+    <br>
+<form id="form1" name="form1" method="post" action="/myapp/usr_view_reply_post/">
+   <div>
+        <table width="543" border="0" class="pull-left" style="color:  var(--font-color);">
+    {% csrf_token %}
+    <tr>
+      <td>from</td>
+      <td >
+      <input type="date" class="form-control" name="textfield" id="textfield" /></td>
+      <td >to</td>
+      <td >
+      <input type="date" class="form-control" name="textfield2" id="textfield2" /></td>
+      <td><input type="submit" class="btn btn-info" name="button" id="button" value="go" /></td>
+    </tr>
+        </table>
+    </div>
+<br>
+<div>
+<br>
+<br>
+<table width="543" border="1" class="table table-bordered" style="color:  var(--font-color);">
+    <tr>
+      <th>Sl No</th>
+      <th>Date</th>
+      <th>Complaint</th>
+      <th colspan="2">Reply</th>
+      <th>Status</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{{ i.complaint }}</td>
+      <td colspan="2">{{ i.reply }}</td>
+      <td>&nbsp;{{ i.status }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+</form>
+{% endblock %}

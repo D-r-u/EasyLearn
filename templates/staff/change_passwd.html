@@ -1,0 +1,24 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+    <h1>Change Your Password</h1>
+    <form action="/myapp/stf_change_passwd_post/" method="post">
+        <table width="200" border="1" class="table table-bordered" style="color:  var(--font-color);">
+    {% csrf_token %}
+  <tr >
+    <td>Old Password</td>
+    <td><input type="text" name="textfield" id="textfield" class="form-control" /></td>
+  </tr>
+  <tr>
+    <td>New Password</td>
+    <td><input type="text" name="textfield2" id="textfield2" class="form-control"/></td>
+  </tr>
+  <tr>
+    <td>Confirm Password</td>
+    <td><input type="text" name="textfield3" id="textfield3" class="form-control"/></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="button" id="button" class="btn btn-outline-primary" value="Submit" style="color:  var(--font-color);" /></td>
+  </tr>
+</table></form>
+    {% endblock %}

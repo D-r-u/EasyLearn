@@ -1,0 +1,39 @@
+{% extends "admin/adm_home_index.html" %}
+{% block body %}
+
+<body>
+<h1 class="title-big text-center">Students</h1>
+<form action="/myapp/view_user_post/" method="post"><table class="pull-left" style="color:  var(--font-color);">
+    {% csrf_token %}
+  <tr>
+    <td><input type="text" class="form-control" name="textfield" id="textfield" /></td>
+    <td><input type="submit" class="btn btn-info" name="button" id="button" value="GO!" /></td>
+  </tr>
+</table>
+<br><br>
+  <table class="table table-bordered" style="color:  var(--font-color);">
+    <tr>
+      <th width="62">Sl. No.</th>
+      <th width="52">Name</th>
+      <th width="8">DOB</th>
+      <th width="8">Gender</th>
+      <th width="7">Contacts</th>
+      <th width="7">place</th>
+      <th width="12">Edu_status</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ forloop.counter }}&nbsp;</td>
+      <td><img src="{{ i.photo }}" alt="" name="p1" width="32" height="32" id="p1" /><br>
+      {{ i.name }}&nbsp;</td>
+      <td>{{ i.dob }}&nbsp;</td>
+      <td>{{ i.gender }}&nbsp;</td>
+      <td>{{ i.phone }}{{ i.mail }}&nbsp;</td>
+      <td>{{ i.place }}&nbsp;</td>
+    <td>{{ i.current_education_status }}&nbsp;</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+    <h1 align="center">View Profile</h1>
+    <br><br>
+<form action="" method="post"><table width="473" border="1" class="table table-bordered" style="color:  var(--font-color);">
+  <tr>
+    <th width="209">Name:</th>
+    <td width="164">{{ staff.name }}&nbsp;</td>
+      <td width="78" rowspan="3"><img src="{{ staff.photo }}" name="imageField" id="imageField" height="140px" width="140px" /></td>
+  </tr>
+  <tr >
+    <th>Gender:</th>
+    <td>&nbsp;{{ staff.gender }}</td>
+  </tr>
+  <tr >
+    <th>DOB:</th>
+    <td>{{ staff.dob }}&nbsp;</td>
+  </tr>
+  <tr colspan="2">
+    <th>Username:</th>
+    <td>{{ staff.LOGIN.username }}&nbsp;</td>
+
+  </tr>
+  <tr>
+    <th>Phone:</th>
+    <td>{{ staff.phone }}</td>
+  </tr>
+  <tr>
+    <th>email id:</th>
+    <td>&nbsp;{{ staff.mail }}</td>
+  </tr>
+   <tr>
+    <th>State:</th>
+    <td>&nbsp;{{ staff.state }}</td>
+
+  </tr>
+   <tr>
+    <th>House Name/No.:</th>
+    <td>{{ staff.housename }}</td>
+
+  </tr>
+  <tr>
+    <th>Place:</th>
+    <td>&nbsp;{{ staff.place }}</td>
+  </tr>
+   <tr>
+    <th>District:</th>
+    <td>&nbsp;{{ staff.district }}</td>
+
+  </tr>
+   <tr>
+    <th>Pincode:</th>
+    <td>{{ staff.pincode }}</td>
+
+  </tr>
+  <tr>
+    <th>Qualification:</th>
+    <td>{{ staff.qualification }}</td>
+
+  </tr>
+      <tr>
+    <th>Current Institution:</th>
+    <td>&nbsp;{{ staff.current_institution }} </td>
+
+  </tr>
+  <tr>
+      <th><a href="/myapp/stf_home/" class="btn btn-outline-danger">Close</a></th>
+      <th><a href="/myapp/stf_edit_profile/" class="btn btn-outline-info">Edit</a></th>
+  </tr>
+</table></form>
+    {% endblock %}

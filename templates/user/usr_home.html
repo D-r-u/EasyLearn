@@ -1,0 +1,120 @@
+{% extends 'user/usr_home_index.html' %}
+
+{% block c %}
+
+
+
+
+{% endblock %}
+
+{% block body %}
+     <h3 class="title-big mb-4">Question Generator</h3>
+          <p class="">An AI powered Tool used to convert the documents that you provide into probable Questions and Answers and generate
+          its Summary and point out Keywords.</p>
+          <a href="/myapp/usr_file_upload/" class="btn btn-style btn-primary mt-lg-5 mt-4">Upload Notes</a>
+
+{% endblock %}
+
+
+{% block b %}
+
+      <section class="w3l-grids-3 py-md-5 pb-5" id="about">
+    <div class="container py-lg-6 py-md-3 text-center">
+      <div class="row bottom-ab-grids">
+
+        <div class="col-lg-7 bottom-ab-left">
+          <!-- <h6 class="title-small">About Our Company</h6> -->
+          <h3 class="title-big mb-5">Voice Into Notes</h3>
+          <p class="">Click on the image to convert live voice into Text.</p>
+        </div>
+          <div class="col-lg-3 mt-lg-auto mt-0 pl-lg-5 ">
+              <a  href="/myapp/usr_voice/">
+                <img src="/static/home3/assets/images/v1.jpg" height="100" width="100" class="img-fluid radius-image" alt="">
+              </a>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- //home page block2 grids -->
+
+
+    <section class="w3l-aboutblock py-5">
+  <div class="container py-md-4 py-3 text-center">
+    <div class="row">
+      <div class="col-lg-9 col-md-10 mx-auto">
+        <div class="subscribe mx-auto">
+          <div class="header-section text-center mx-auto">
+            <h3 class="title-big">Exam Center</h3>
+
+
+
+              <ol class="w3l-right mt-lg-5 mt-4">
+                        <li>View tests uploaded by teachers and attend.
+                            <a href="/myapp/usr_attend_test/" class="btn btn-style btn-primary mt-lg-5 mt-4">Attend Tests</a></li>
+                        <li>View the results of the tests attended by you.
+                            <a href="/myapp/usr_view_result/" class="btn btn-style btn-primary mt-lg-5 mt-4">Results</a></li>
+              </ol>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- home page block4 -->
+<section class="w3l-homeblock3 py-5">
+    <div class="container py-lg-5 py-md-4 text-center">
+        <div class="row">
+{#            <div class="col-lg-6 ">#}
+{#                <img src="/static/home3/assets/images/s2.jpg" class="img-fluid radius-image" alt="">#}
+{#            </div>#}
+            <div class="col-lg-12 align-center mt-lg-auto mt-4">
+                <h3 class="title-big">Technology Used</h3>
+                <br><br>
+                <p class="align-center">Transformers are a type of deep learning model architecture introduced in the paper
+                    "Attention is All You Need" by Vaswani et al. in 2017.
+                    They have since become the foundation for many state-of-the-art natural language processing (NLP) tasks.
+                    The key innovation of transformers is the self-attention mechanism, which allows the model to weigh different
+                    parts of the input sequence differently when making predictions, capturing complex relationships in data.
+                    Popular transformer-based models for QA include BERT, GPT-3, T5 (Text-to-Text Transfer Transformer),
+                    and more. Implementing a QA pipeline using transformers often involves fine-tuning on a task-specific dataset
+                    to adapt the model to the specific requirements of the question-answering task</p>
+{#                <a href="about.html" class="btn btn-style btn-primary mt-lg-5 mt-4">Read More</a>#}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //home page block4 -->
+
+<!-- home page block5 -->
+<div class="w3l-homeblock4 py-5" id="quote">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left text-center py-md-5 py-3">
+            <h3>Leave a Review</h3>
+            <p>Let us know your thoughts about this Website. Do leave us a review for future betterment!</p>
+            <a href="/myapp/usr_send_reviews/" class="btn btn-style btn-primary mt-sm-5 mt-4">Rate Us</a>
+        </div>
+    </div>
+</div>
+<!-- //home page block5 -->
+
+     <section class="w3l-grids-3 py-md-5 pb-5" id="about">
+    <div class="container py-lg-5 py-md-3 text-center">
+      <div class="row bottom-ab-grids">
+
+        <div class="col-lg-6 bottom-ab-left">
+          <!-- <h6 class="title-small">About Our Company</h6> -->
+          <h3 class="title-big mb-4">Be Back Soon!</h3>
+        </div>
+        <div class="col-lg-6 mt-lg-0 mt-5 pl-lg-4">
+            <a href="/myapp/adm_logout/" class="btn btn-style btn-primary ">Log Out</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Voice Converter️ </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+        <link rel="stylesheet" href="/static/docs/style.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <h1 type="title-big">Voice Convertion</h1>
+            <p class="page-description" style="color:  var(--font-color);">Read and Make Your Essential Notes</p>
+             
+            <h3 class="no-browser-support" style="color:  var(--font-color);">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
+
+            <div class="app">
+                <h3 style="color:  var(--font-color);">Add New Note</h3>
+
+                 <button id="start-record-btn" title="Start Recording" class="btn btn-info">Start </button>
+                <button id="pause-record-btn" title="Pause Recording" class="btn btn-danger">Pause </button>
+
+                <form method="post" action="/myapp/usr_voice_post/">
+                    {% csrf_token %}
+                <div class="input-single">
+                    <textarea id="note-textarea" name="a" placeholder="Create a new note by typing or using voice recognition." rows="6"></textarea>
+                </div>
+
+                    <input type="submit" value="Optimize Text" class="button">
+
+                </form>
+
+
+                <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
+                
+{#                <h3>My Notes</h3>#}
+{#                <ul id="notes">#}
+{#                    <li>#}
+{#                        <p class="no-notes">You don't have any notes.</p>#}
+{#                    </li>#}
+{#                </ul>#}
+
+            </div>   
+               
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/static/docs/script.js"></script>
+        
+       
+        
+    </body>
+</html>
+
+

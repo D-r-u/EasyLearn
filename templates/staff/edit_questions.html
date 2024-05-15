@@ -1,0 +1,60 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+    <h1 class="title-big">Edit Questions</h1>
+    <br>
+<form action="/myapp/stf_edit_questions_post/" method="post">
+{% csrf_token %}
+<table width="200" border="1" class="table table-bordered" style="color:  var(--font-color);">
+  <tr>
+    <td>Testname:</td><input type="hidden" id="id" value="{{ data.id }}"name="id">
+    <td><label for="tname"></label>
+      <select name="tname" id="tname" value="{{ data.TEST_id }}"  class="form-control" >
+          {% for i in tname %}
+              <option value="{{ j.id }}">{{ i.testname }}</option>
+          {% endfor %}
+
+      </select></td>
+  </tr>
+  <tr>
+    <td>Question:</td>
+    <td><select name="question" id="question" value="{{ data.question }}"  class="form-control" >
+        {% for j in q %}
+        <option value="{{ j.question }}"> {{ j.question }}
+        </option>
+        {% endfor %}
+    </select>
+        <h3 class="title-small">OR</h3>
+    <input type="text" class="form-control" name="quest" id="opt1" />
+    </td>
+  </tr>
+  <tr>
+    <td>Option 1:</td>
+    <td><input class="form-control" type="text" name="opt1" id="opt1"  value="{{ data.option1 }}"/></td>
+  </tr>
+  <tr>
+    <td>Option 2:</td>
+    <td><input type="text" class="form-control"name="opt2" id="opt2"  value="{{ data.option2 }}"/></td>
+  </tr>
+  <tr>
+    <td>Option 3:</td>
+    <td><input type="text" class="form-control" name="opt3" id="opt3"  value="{{ data.option3 }}"/></td>
+  </tr>
+  <tr>
+    <td>Option 4:</td>
+    <td><input type="text" class="form-control" name="opt4" id="opt4"  value="{{ data.option4 }}"/></td>
+  </tr>
+  <tr>
+    <td>Correct Answer:</td>
+    <td><select name="crctans"  class="form-control"  id="crctans"  value="{{ data.correct_answer }}">
+        <option value="opt1"> Option 1</option>
+        <option value="opt2"> Option 2 </option>
+        <option value="opt3"> Option 3 </option>
+        <option value="opt4"> Option 4 </option>
+    </select></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Submit" id="Submit" value="Edit" class="btn btn-outline-primary" style="color:  var(--font-color);" /></td>
+  </tr>
+</table></form>
+    {% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'user/usr_home_index.html' %}
+{% block body %}
+    <h1>View Profile</h1>
+<form action="" method="post"><table width="473" border="1" class="table table-bordered" style="color:  var(--font-color);">
+  <tr>
+    <td width="78" rowspan="9"><img name="imageField" class=" img-circle" src="{{ user.photo }}" height="80px" width="80px" /></td>
+    <th width="209">Name</th>
+    <td width="164">{{ user.name }}</td>
+  </tr>
+  <tr>
+    <th>Gender</th>
+    <td>{{ user.gender }}</td>
+  </tr>
+  <tr>
+    <th>DOB</th>
+    <td>{{ user.dob }}</td>
+  </tr>
+  <tr>
+    <th>Username</th>
+    <td>{{ user.LOGIN.username }}</td>
+  </tr>
+  <tr>
+    <th>Phone</th>
+    <td>{{ user.phone }}</td>
+
+  </tr>
+  <tr>
+    <th>email id</th>
+    <td>{{ user.mail }}</td>
+  </tr>
+  <tr>
+    <th>Place</th>
+    <td>{{ user.place }}</td>
+  </tr>
+  <tr>
+    <th>Education Status</th>
+    <td>{{ user.current_education_status }}</td>
+  </tr>
+  <tr>
+      <td><a href="/myapp/usr_edit_profile/" class="btn btn-outline-info">Edit</a></td>
+      <td><a href="/myapp/usr_home/" class="btn btn-outline-danger">Close</a></td>
+  </tr>
+</table>
+</form>
+{% endblock %}

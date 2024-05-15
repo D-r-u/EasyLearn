@@ -1,0 +1,93 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+    <br>
+<br>
+<br>
+    <div >
+    <h1 class="title-big">UPLOAD NOTES</h1>
+        <br>
+        <br>
+        <br>
+    </div>
+
+<form action="/myapp/stf_file_upload_post/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <table width="250" border="0" class="table table-responsive-xl" style="color:  var(--font-color);">
+  <tr>
+      <th width="241"><h4>Choose File(docx,pdf)</h4></th>
+    <td width="107"><label for="textfield"></label>
+      <input type="file" name="textfield" id="textfield" /></td>
+  </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" class="btn btn-outline-info " name="submit" id="file_upload" style="color:  var(--font-color);"  value="Convert"></td>
+        </tr>
+        <tr><td></td>
+            <td><h4 style="color: #60d8e0">OR</h4></td>
+        </tr>
+        <tr>
+            <th width="79"><h4> Enter text</h4></th>
+      <td width="218">
+          <textarea name="textarea" rows="5" class="form-control">{{ d }}</textarea></td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="submit" onclick="myFunc()" id="submit" value="Upload" class="btn btn-outline-info" style="color:  var(--font-color);"  /></td>
+  </tr>
+    </table>
+<br>
+    <p id="txt"></p>
+<br>
+<br>
+    <h2>Generated Questions</h2>
+    <table border="1" class="table table-bordered" style="color:  var(--font-color);">
+  <tr>
+    <th>Sl no.</th>
+    <th>Question</th>
+    <th>Answer</th>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>{{forloop.counter}}&nbsp;</td>
+    <td>&nbsp;{{ i.question}}</td>
+    <td>{{ i.answer }}</td>
+  </tr>
+
+  {% endfor %}
+</table>
+    <h4>Summary</h4>
+    <p>
+        {{ m }}
+    </p><br>
+     <h4> Keywords Extracted</h4>
+<br>
+   <ul>
+    {% for u in keywords %}
+            <li>{{ u.0 }}</li>
+
+    {% endfor %}
+   </ul>
+{#</form>#}
+
+{#    <form action="/myapp/usr_file_upload_post/" method="post" enctype="multipart/form-data">#}
+{% csrf_token %}
+        <div>
+        <h3 class="title-small">
+        Export As:</h3>
+    <select name="options" style="color:  var(--font-color);" class="form-control" >
+        <option value="pdf">PDF</option>
+        <option value="voice">Voice</option>
+    </select>
+            <br>
+        </div>
+        <div>
+    <input type="submit" name="submit" id="submit" value="Export" class="btn btn-outline-primary" style="color:  var(--font-color);"  />
+    </div>
+    </form>
+      <script>
+    function myFunc() {
+  document.getElementById('txt').innerHTML = 'This process may take a few minutes according to the input data. Do not close or refresh the page while it is loading.';
+}
+    </script>
+
+{% endblock %}

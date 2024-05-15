@@ -1,0 +1,26 @@
+{% extends "admin/adm_home_index.html" %}
+{% block body %}
+<body>
+<h1 class="title-big text-center">Change Password</h1>
+<form action="/myapp/Change_password_post/" method="post"><table class="table table-bordered" style="color:  var(--font-color);">
+  {% csrf_token %}
+    <tr>
+    <th>Old Password</th>
+    <td><input type="text" class="form-control" name="textfield" id="textfield"  /></td>
+  </tr>
+  <tr>
+    <th>New Password</th>
+    <td><input type="text" class="form-control" name="textfield2" id="textfield2" /></td>
+  </tr>
+  <tr>
+    <th>Confirm Password</th>
+    <td><input type="text" class="form-control" name="textfield3" id="textfield3" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" class="btn btn-outline-primary" name="button" id="button" value="Submit" style="color:  var(--font-color);"/></td>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}

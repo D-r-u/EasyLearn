@@ -1,0 +1,39 @@
+{% extends 'staff/stf_home_index.html' %}
+{% block body %}
+    <h1 class="title-big">View Reviews</h1>
+    <form action="/myapp/stf_view_reply_post/" method="post">
+    <div>
+        <table width="543" border="0" class="pull-left" style="color:  var(--font-color);">
+    {% csrf_token %}
+    <tr>
+      <td>from</td>
+      <td >
+      <input type="date" class="form-control" name="textfield" id="textfield" /></td>
+      <td >to</td>
+      <td >
+      <input type="date" class="form-control" name="textfield2" id="textfield2" /></td>
+      <td><input type="submit" class="btn btn-info" name="button" id="button" value="go" /></td>
+    </tr>
+        </table>
+    </div>
+        <table width="543" border="1" class="table table-bordered" style="color:  var(--font-color);">
+    <tr>
+      <td>slno</td>
+      <td>date</td>
+      <td>complaint</td>
+      <td>reply</td>
+      <td>status</td>
+      <td>&nbsp;</td>
+    </tr>
+        {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{{ i.complaint }}</td>
+      <td>{{ i.reply }}</td>
+      <td>&nbsp;{{ i.status }}</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% endfor %}
+  </table></form>
+    {% endblock %}
