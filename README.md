@@ -13,8 +13,9 @@ its functionality. Machine Learning (ML) is implemented using the Transformers m
 to process input data in parallel, allowing for more efficient learning and improved performance on sequential tasks.
 
 ## Working
-![alt text](<media\Screenshot (25).png>)
-![alt text](<media\Screenshot (26).png>)
+![Screenshot (25)](https://github.com/D-r-u/ExamWiz/assets/125999678/322ea2a8-5358-4b5c-a4b6-bcd0c16e0f23)
+
+![Screenshot (26)](https://github.com/D-r-u/ExamWiz/assets/125999678/49d88003-3ca8-438c-82cc-ab8ce184d961)
 
 ## Co-Authors
 
