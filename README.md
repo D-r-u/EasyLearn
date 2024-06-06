@@ -1,9 +1,10 @@
 # ExamWiz
 
 ## Authors
-### Drupad M D
+
 ### Goutham Sunder S S
 ### M P Navanath
+### Drupad M D
 <br>
 
 ## Introduction
