@@ -1,5 +1,10 @@
 # ExamWiz
 
+## Authors
+### Drupad M D
+### Goutham Sunder S S
+### M P Navanath
+
 ## Introduction
 A Website designed to make the preparation for examinations easier and hassle-free for the Students as well as making it easier for the Teachers to conduct quick class tests.
 It helps to convert Notes in the form of documents, PDFs or voice into a set of question
@@ -17,7 +22,4 @@ to process input data in parallel, allowing for more efficient learning and impr
 
 ![Screenshot (26)](https://github.com/D-r-u/ExamWiz/assets/125999678/49d88003-3ca8-438c-82cc-ab8ce184d961)
 
-## Co-Authors
 
-### Goutham Sunder S S
-### M P Navanath
